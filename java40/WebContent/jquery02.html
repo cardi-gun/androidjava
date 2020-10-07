@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+	//document.ready() => body부분부터 먼저 로딩, 먼저 읽고와야함
+	//익명함수로 정의해서 브라우저먼저 로딩하게 한뒤 사용한다.
+	//body를 읽어와서 여기서 실행하렴
+	$(function() {
+		$('#b1').click(function() {
+			pw = $('#pw').val()//태그안의 값은 value
+			pw2 = $('#pw2').val()//태그사이의 텍스트는 text
+			if(pw==pw2){
+				$('div').html('<font color=red><b>비밀번호 일치</b></font>')
+			}else{
+				$('div').html('<font color=red><b>비밀번호 불일치</b></font>')
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	<hr color="red">
+	<br>
+	아이디 : <input type="text" id ="id"><br>
+	패스워드입력 : <input type="text" id ="pw"><br>
+	패스워드확인 : <input type="text" id ="pw2"><br>
+	<button id ="b1">로그인 처리</button>
+	<div></div>
+</body>
+</html>

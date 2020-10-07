@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function check() {
+	idValue = document.getElementById('id').value
+	pw1Value = document.getElementById('pw1').value
+	pw2Value = document.getElementById('pw2').value
+	if (pw1Value == pw2Value) {
+		location.href = 'login.jsp?id='+idValue+'&pw='+pw1Value
+	}else{
+		//alert('패스워드가 다릅니다. 다시입력해주세요.')
+		document.getElementById('result').innerHTML = '패스워드가 다름.'
+	}
+}
+</script>
+</head>
+<body>
+<h3>로그인 처리</h3>
+아이디:<input type="text" id="id" name="id"><br>
+비밀번호:<input type="text" id="pw1" name="pw1"><br>
+비밀번호확인:<input type="text" id="pw2" name="pw2"><br>
+<button onclick="check()">로그인 처리</button>
+<div id='result'></div>
+</body>
+</html>

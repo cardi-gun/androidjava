@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function nullcheck() {
+	userid = document.getElementById('userId').value
+		//아이디 입력확인
+	if (userid.length == 0) {
+		//alert("아이디를 입력하세요.")
+		document.getElementById('result').innerHTML = '아이디를 입력하세요'
+	}
+}//null
+
+function fivecheck() {
+	userid = document.getElementById('userId').value
+	if (userid.length <= 4) {
+		//아이디 글자수 확인
+		//alert("아이디를 5글자 이상 입력하세요.")
+		document.getElementById('result').innerHTML = '아이디를 5글자 이상 입력하세요.'
+	}
+}//five
+
+function samecheck() {
+	//아이디 체크
+	userid = document.getElementById('userId').value
+	//페이지 이동
+	location.href = 'equal.jsp?id='+userid
+}//same
+
+function loginclick() {
+	userid = document.getElementById('userId').value
+	userpw = document.getElementById('userPw').value
+	userpwch = document.getElementById('userPwch').value
+	//비밀번호 비교
+	
+	if(userpw == userpwch){
+	//페이지 이동
+	location.href = 'login.jsp?id='+userid+'&pw='+userpw
+	}else{
+		alert ("비밀번호를 다시 확인해 주세요");
+	}
+}
+
+</script>
+</head>
+<body>
+	<h3>아이디확인</h3>
+	<hr color="red">
+	아이디 : <input type="text" id="userId" name="userId">
+	<button onclick="nullcheck()">아이디입력확인</button>
+	<button onclick="fivecheck()">아이디글자수확인</button>
+	<button onclick="samecheck()">아이디 중복확인</button><br>
+	<div id="result"></div><br>
+	비밀번호 : <input type="text" id="userPw" name="userPw"><br>
+	비밀번호확인 : <input type="text" id="userPwch" name="userPw">
+	
+	<button onclick="loginclick()">로그인</button><br>
+
+</body>
+</html>
