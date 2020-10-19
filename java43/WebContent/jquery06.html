@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js">
+	//제이쿼리 링크 연결용
+</script>
+<script type="text/javascript">
+	//콜백함수 사용용
+	//ajax
+	$(function() {/*비동기통신*/
+		$('#b1').click(function() {
+			$.ajax({
+				url:"check2.jsp",//연결될 url
+				data:{
+					id : $("#id").val()
+				},
+				success : function(textresult){//처리결과
+					//0이면 id가 없음, 1이면 아이디가 있음.
+					$('#d1').html(textresult)
+					/*$('#d1').append(textresult+<br>)//div를 추가하는방식 */	
+				}
+			})//ajax
+		})//b1click
+		
+		$('#b2').click(function() {
+			$.ajax({
+				url:"reply.jsp",//""를 안해주면 변수로 인식
+				data:{
+					reply: $("#reply").val()
+				},
+				success : function(result) {
+					$('#d2').append(result)
+				}
+			})//ajax
+		})//b2click
+		
+		$('#b3').click(function() {
+			$.ajax({
+				url:"img.jsp",//""를 안해주면 변수로 인식
+				data:{
+					reply: $("#reply").val()
+				},
+				success : function(result) {
+					$('#d2').append(result)
+				}
+			})//ajax
+		})//b3click
+		
+		$('#b4').click(function() {
+			$.ajax({
+				url:"reply2.jsp",//""를 안해주면 변수로 인식
+				data:{
+					reply: $("#reply").val()
+				},
+				success : function(result) {
+					$('#d2').append(result)
+				}
+			})//ajax
+		})//b4click
+		
+	})//ready end
+</script>
+</head>
+<body>
+	가입할 id 입력 : <input type="text" id="id">
+	<button id="b1">아이디 중복체크</button>
+	<hr>
+	<div id="d1"></div>
+	<hr color="red">
+	댓글 텍스트 입력: <input type="text" id="reply">
+	<button id="b2">댓글달기(텍스트)</button>
+	<button id="b3">댓글달기(이미지)</button>
+	<button id="b4">댓글달기(텍스트+이미지)</button>
+	<hr>
+	<div id="d2"></div>
+
+</body>
+</html>

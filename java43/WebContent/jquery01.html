@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function food(time) {// 콜백 함수 
+		/* 매개변수, 파라메터 = 처리하는데 있어서 입력값의 역할 */
+		console.log(time+'시에 아침을 먹었습니다! 확인했습니다!')
+		if(time >=8){
+			console.log("지각!")
+		}else{
+			console.log("지각이 아닙니다.")
+		}
+		return "ok";//java는 반환형을 적어줘야 하는데 js는 반환형을 적지 않고 반환하고 싶으면 그냥 return을 적어서 반환한다.
+	}
+</script>
+</head>
+<body>
+	<button onclick="food(8)">기능처리가 함수 중심으로 처리가 된다.</button>
+	
+</body>
+</html>

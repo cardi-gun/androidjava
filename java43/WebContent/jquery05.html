@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js">
+	//제이쿼리 링크 연결용
+</script>
+<script type="text/javascript">
+	//콜백함수 사용용
+	//ajax
+	$(function() {/*비동기통신*/
+		$('#b1').click(function() {
+			$.ajax({
+				url:"check.jsp",//연결될 url
+				data:{
+					id : $("#id").val()
+				},
+				success : function(result){//처리결과
+					//0이면 id가 없음, 1이면 아이디가 있음.
+					if (result == 0) {//html대신 text사용가능, 효과를 주기위해 html사용
+						$('#d1').html('<font color=green>사용가능한 id입니다.</font>')
+					} else {
+						$('#d1').html('<font color=red>사용불가능한 id입니다.</font>')
+
+					}
+				}
+			})
+			
+				
+			
+		})
+	})
+</script>
+</head>
+<body>
+	가입할 id 입력 : <input type="text" id="id">
+	<button id="b1">아이디 중복체크</button>
+	<hr>
+	<div id="d1">
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js">
+	//제이쿼리 링크 연결용
+</script>
+<script type="text/javascript">
+	//콜백함수 사용용
+	//ajax
+	$(function() {/*비동기통신*/
+		$('#b1').click(function() {
+
+			$.ajax({
+				url : "call.jsp",
+				data :{
+					age: $('#age').val()
+				},
+				success : function(result) {
+					alert("성공")
+					console.log("받은 데이터 : " + result)
+					if (result =='성인') {
+						location.href="http://www.naver.com"
+					}else{
+						alert('미성년자입니다. 부모님의 동의가 필요합니다.')
+					}
+				}
+			})
+
+		})
+		/*var oReq = new XMLHttpRequest(); 
+		
+		
+		 */
+	})
+</script>
+
+</head>
+<body>
+	나이<input id="age">
+	<button id="b1">tomcat서버로 ajax 통신하기</button>
+
+</body>
+</html>

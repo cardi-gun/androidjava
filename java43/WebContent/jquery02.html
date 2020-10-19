@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js">
+	//제이쿼리 링크 연결용
+</script>
+<script type="text/javascript">
+	//콜백함수 사용용
+	//call-back함수
+	$(function() {
+		$('button').click(function(){
+			$(this).text('나로 바뀌어!')/* 내가 현재 선택한 위치 = this = 여기서는 버튼 */
+			/* $('button').text('나로 바뀌어!') button.text()= 버튼안의 값을 가져온다, button.text('abc') = 버튼안의 기존의 값을 abc로 바꾼다. */
+			bText = $(this).text()
+			console.log('버튼 사이의 텍스트는 ' + bText)
+		})
+		$('#in2').click(function() {
+			inputValue = $('#in1').val()
+			console.log('input태그의 value속성값은 ' + inputValue)
+			$('#in1').val('내가 여기 들어갑니다.')
+		})
+		
+	})
+	//$ = document, body부분 부터 dom트리로 읽어오고 script를 읽는다.
+	//html선택자 = 속성태그, class, id
+</script>
+
+</head>
+<body>
+	<button>기능처리가 함수 중심으로 처리가 된다.</button>
+	<input type="text" id="in1" name="food" value="나는 input의 값">
+	<input type="button" id="in2" value="입력한 값 가져오기">
+
+</body>
+</html>

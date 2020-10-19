@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js">
+	//제이쿼리 링크 연결용
+</script>
+<script type="text/javascript">
+	//콜백함수 사용용
+	//ajax
+	$(function() {/*비동기통신*/
+		$('#b1').click(function() {
+			$.ajax({
+				url : "call2.jsp",
+				data :{
+					score: $('#score').val()
+					//데이터를 값으로 인식이 필요할때 ""가 필요하다
+				},
+				success : function(result) {
+					alert("성공")
+					console.log("받은 데이터 : " + result)
+					if (result =='보통') {
+						alert("재시험 대상입니다.")
+					}else{
+						alert("시험에 통과했습니다!")
+					}
+				}
+			})
+		})
+	})
+</script>
+
+</head>
+<body>
+	점수<input id="score">
+	<button id="b1">성적판별하기</button>
+
+</body>
+</html>
