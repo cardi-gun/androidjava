@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 테이블 이름을 구분하는 부분 -->
+
+
+<mapper namespace="bbs">
+
+
+<insert id="create" parameterType="bbsVO">
+<!-- sql구문 작성 -->
+	insert into bbs values (#{no},#{title},#{content},#{writer})
+</insert>
+
+
+<select id="one" parameterType="bbsVO" resultType="bbsVO">
+<!-- sql구문 작성 -->
+	select * form bbs where no = #{no}
+</select>
+
+<select id="list" resultType="bbsVO">
+	select * form bbs
+</select>
+
+<update id="update">
+	update bbs set = #{title} where #{no}
+</update>
+
+<delete id="delete">
+	delete from bbs where #{no}
+</delete>
+
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <typeAliases>
+   <!-- VO의 이름을 짧게 정의 해주는 부분 -->
+      <typeAlias type="com.mega.mvc05.BbsVO" alias="bbsVO"></typeAlias>
+      <typeAlias type="com.mega.mvc05.MemberVO" alias="MemberVO"></typeAlias>
+   </typeAliases>
+   <mappers>
+   
+      <mapper resource="mapper/bbs-mapper.xml" />
+      <mapper resource="mapper/member-mapper.xml" />
+   </mappers>
+</configuration>
